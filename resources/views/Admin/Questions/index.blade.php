@@ -52,6 +52,7 @@
                             <th scope="col">D</th>
                             <th scope="col">Lĩnh Vực</th>
                             <th scope="col">Đáp Án</th>
+                            <th scope="col">Trạng Thái</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,6 +67,14 @@
                                 <td>{{$question->d}}</td>
                                 <td>{{$question->field->name}}</td>
                                 <td>{{$question->answer}}</td>
+                                <td>
+                                    <?php
+                                    if($question->status ==0) { ?>
+                                        <a href="{{route('active-question',$question->id)}}"><span class="fa fa-lock"></span></a>
+                                    <?php }else{ ?>
+                                        <a href="{{route('unactive-question',$question->id)}}"><span class="fa fa-unlock-alt"></span></a>
+                                    <?php } ?>                
+                                </td>
                                 <td>
                                     <a href="{{route('questions.edit',$question->id)}}" class="btn btn-success">Edit</a>
                                 </td>

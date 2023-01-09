@@ -45,7 +45,7 @@ class QuestionController extends Controller
     public function store(QuestionStoreRequest $request)
     {
         Question::create($request->validated());
-        return redirect()->route('questions.index')->with('message','Field Question Successfully!');
+        return redirect()->route('questions.index')->with('message','Question Successfully!');
     }
 
     /**
@@ -104,5 +104,21 @@ class QuestionController extends Controller
         $question->delete();
 
         return redirect()->route('questions.index')->with('message','Question Delete Successfully!');
+    }
+
+    public function active($question_id)
+    {
+        $question = Question::find($question_id);
+        $question->status = 1;
+        $question->save();
+        return redirect()->route('questions.index')->with('message','Kích Hoạt Câu Hỏi Thành Công!');
+    }
+
+    public function unactive($question_id)
+    {
+        $question = Question::find($question_id);
+        $question->status = 0;
+        $question->save();
+        return redirect()->route('questions.index')->with('message','Hủy Kích Hoạt Câu Hỏi Thành Công!');
     }
 }

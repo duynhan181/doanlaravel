@@ -46,6 +46,7 @@
                         <tr>
                             <th scope="col">STT</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Trạng Thái</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,6 +55,16 @@
                             <tr>
                                 <th scope="row">{{$field->id}}</th>
                                 <td>{{$field->name}}</td>
+                                <td>
+                                    <?php
+                                    if($field->status ==0) { ?>
+                                        <a href="{{route('active-field',$field->id)}}"><span class="fa fa-lock"></span></a>
+                                    <?php }else{ ?>
+                                        <a href="{{route('unactive-field',$field->id)}}"><span class="fa fa-unlock-alt"></span></a>
+                                    <?php } ?>                
+                                </td>
+
+
                                 <td>
                                     <a href="{{route('fields.edit',$field->id)}}" class="btn btn-success">Edit</a>
                                 </td>

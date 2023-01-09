@@ -16,7 +16,8 @@ class Question extends Model
         'c',
         'd',
         'answer',
-        'field_id'
+        'field_id',
+        'status'
     ];
 
     public function field()

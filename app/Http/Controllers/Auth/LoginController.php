@@ -70,7 +70,7 @@ class LoginController extends Controller
         $credentials = $request->only('email','password');
 
         if(Auth::attempt($credentials)){
-            return redirect()->intended('Admin/home');
+            return redirect()->intended('/Admin/home');
         }
 
         return redirect('login')->with('error','Bạn cần đăng nhập đúng!');

@@ -41,11 +41,7 @@
                         <span>Câu Hỏi</span></a>
                 </li>
 
-                   <!-- Câu hỏi -->
-                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('packageQuestion.index')}}">
-                        <span>Gói Câu Hỏi</span></a>
-                </li>
+                  
                 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
@@ -59,7 +55,7 @@
 
                 <!-- Main Content -->
                 <div id="content">
-
+                    
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -94,7 +90,7 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-
+                       
                         <!-- Page Heading -->
                         <div class="">
                             @yield('content_admin')

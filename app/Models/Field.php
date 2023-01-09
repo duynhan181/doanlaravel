@@ -11,6 +11,7 @@ class Field extends Model
 
     protected $fillable = [
         'name',
+        'status'
     ];
 
     public function questions()

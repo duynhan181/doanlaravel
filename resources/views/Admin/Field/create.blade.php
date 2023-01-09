@@ -37,6 +37,14 @@
                                             @enderror
                                         </div>
 
+                                        <div class="form-group">
+                                            {{-- <label for="exampleFormControlSelect1">Trạng Thái</label> --}}
+                                            <select class="form-control" id="exampleFormControlSelect1" name="status" >
+                                                <option selected>Bạn có muốn kích hoạt Lĩnh Vực</option>
+                                                <option value="1">Kích Hoạt</option>
+                                                <option value="0">Không Kích Hoạt</option>
+                                            </select>
+                                        </div>
                                         
                                             <hr>
 

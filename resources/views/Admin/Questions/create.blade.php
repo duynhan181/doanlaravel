@@ -92,7 +92,7 @@
                                         <div class="form-group">
                                             
                                             <select name="field_id" class="form-control" aria-label="Default select example">
-                                                <option selected>Open this select menu</option>
+                                                <option selected>Mời Chọn Lĩnh Vực</option>
                                                 @foreach ($fields as $field)
                                                     <option value="{{$field->id}}">{{$field->name}}</option>
                                                 @endforeach
@@ -117,6 +117,17 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
+                                        </div>
+
+                                        {{-- Trạng Thái --}}
+                                        
+                                        <div class="form-group">
+                                            {{-- <label for="exampleFormControlSelect1">Trạng Thái</label> --}}
+                                            <select class="form-control" id="exampleFormControlSelect1" name="status" >
+                                                <option selected>Bạn có muốn kích hoạt Câu Hỏi</option>
+                                                <option value="1">Kích Hoạt</option>
+                                                <option value="0">Không Kích Hoạt</option>
+                                            </select>
                                         </div>
                                         
                                         <hr>

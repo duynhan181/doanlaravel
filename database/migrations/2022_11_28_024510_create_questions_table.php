@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('d');
             $table->string('answer');
             $table->foreignId('field_id')->constrained();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

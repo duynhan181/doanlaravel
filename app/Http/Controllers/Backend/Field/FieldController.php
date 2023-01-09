@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\FieldStoreRequest;
 use App\Http\Requests\FieldUpdateRequest;
 use App\Models\Field;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class FieldController extends Controller
@@ -54,6 +53,22 @@ class FieldController extends Controller
         $field->delete();
 
         return redirect()->route('fields.index')->with('message','Field Delete Successfully!');
+    }
+
+    public function active($field_id)
+    {
+        $field = Field::find($field_id);
+        $field->status = 1;
+        $field->save();
+        return redirect()->route('fields.index')->with('message','Kích Hoạt Lĩnh Vực Thành Công!');
+    }
+
+    public function unactive($field_id)
+    {
+        $field = Field::find($field_id);
+        $field->status = 0;
+        $field->save();
+        return redirect()->route('fields.index')->with('message','Hủy Kích Hoạt Lĩnh Vực Thành Công!');
     }
 
 }
